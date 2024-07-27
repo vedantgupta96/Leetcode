@@ -11,7 +11,7 @@ class Solution:
         while q:
             rightmost = None
             for i in range(len(q)):
-                node = q.popleft()
+                node = q.popleft()#removes the leftmost element then returns the queue
                 if node:
                     rightmost = node
                     q.append(node.left)
