@@ -7,8 +7,7 @@
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         ans= []
-        q = collections.deque()
-        q.append(root) #initially queue will always have the root since it's the first level
+        q = collections.deque([root])#initially queue will always have the root since it's the first level
 
         while q:
             level = []
