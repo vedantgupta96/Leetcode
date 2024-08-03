@@ -1,0 +1,55 @@
+Thank you for providing this example. It helps to clarify the problem and the expected output. Let's break down this example and explain how the algorithm works to solve it.
+
+Input: coins = [1,4,10], target = 19
+
+1. Sort the coins: [1,4,10] (already sorted in this case)
+2. Initialize variables: ans = 0, num = 0, i = 0
+
+3. Start the main loop (while num < target):
+   
+   Step 1: num = 0, coin = 1
+   - 1 <= num + 1 (1 <= 1), so we add it
+   - num becomes 1
+
+   Step 2: num = 1, coin = 4
+   - 4 > num + 1 (4 > 2), so we need to add a new coin
+   - We add coin value 2 (num + 1)
+   - ans becomes 1, num becomes 3
+
+   Step 3: num = 3, coin = 4
+   - 4 <= num + 1 (4 <= 4), so we add it
+   - num becomes 7
+
+   Step 4: num = 7, coin = 10
+   - 10 > num + 1 (10 > 8), so we need to add a new coin
+   - We add coin value 8 (num + 1)
+   - ans becomes 2, num becomes 15
+
+   Step 5: num = 15, coin = 10
+   - 10 <= num + 1 (10 <= 16), so we add it
+   - num becomes 25
+
+4. The loop ends because num (25) is now greater than target (19)
+
+5. Return ans, which is 2
+
+The algorithm added two coins: 2 and 8. With these additions, we can now obtain any sum from 1 to 19 using some combination of the coins [1,2,4,8,10].
+
+To verify:
+- 1 can be obtained using [1]
+- 2 can be obtained using [2]
+- 3 can be obtained using [1,2]
+- 4 can be obtained using [4]
+- 5 can be obtained using [1,4]
+- ...and so on up to 19.
+
+The key insights from this example are:
+
+1. The algorithm always tries to use existing coins first.
+2. When it can't use an existing coin, it adds the smallest possible new coin (num + 1) to fill the gap.
+3. By doing this, it ensures that all sums up to the current 'num' are obtainable.
+4. The process continues until we can obtain all sums up to the target.
+
+This greedy approach ensures that we add the minimum number of coins necessary to make all sums up to the target obtainable.
+
+Would you like me to explain any part of this in more detail?
