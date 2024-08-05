@@ -6,7 +6,6 @@ class Solution:
             for l in s:
                 arr[ord(l) - ord('a')] += 1
             d[tuple(arr)].append(s)
-        print(d)
         return d.values()
 
             
