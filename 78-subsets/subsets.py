@@ -8,10 +8,11 @@ class Solution:
             if n >= len(nums):
                 ans.append(subset.copy())
                 return
+            dfs(n+1)
             subset.append(nums[n])
             dfs(n+1)
             subset.pop()
-            dfs(n+1)
+            
         dfs(0)
         return ans
         
