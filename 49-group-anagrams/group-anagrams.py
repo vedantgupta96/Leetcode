@@ -7,5 +7,3 @@ class Solution:
                 arr[ord(l) - ord('a')] += 1
             d[tuple(arr)].append(s)
         return d.values()
-
-            
