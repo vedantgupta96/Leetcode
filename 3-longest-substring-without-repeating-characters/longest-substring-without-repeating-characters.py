@@ -3,15 +3,16 @@ class Solution:
         if not s:
             return 0
         charSet = set()
-        l = 0
+        l,r = 0,0
         ans = 0
 
-        for r in range(len(s)):
+        while r < len(s):
             while s[r] in charSet:
                 charSet.remove(s[l])
                 l+=1
             ans = max(ans, r-l+1)
             charSet.add(s[r])
+            r+=1
         return ans
                 
             
