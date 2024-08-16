@@ -6,12 +6,13 @@ class Solution:
             if total == target:
                 ans.append(cur.copy())
                 return
-            if i >= len(candidates) or total > target:
+            if i == len(candidates) or total > target:
                 return
             cur.append(candidates[i])
             dfs(i,total+candidates[i])
             cur.pop()
             dfs(i+1,total)
+            return
         dfs(0,0)
         return ans
             
