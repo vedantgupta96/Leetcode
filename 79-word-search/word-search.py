@@ -2,7 +2,7 @@ class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
         rows = len(board)
         cols = len(board[0])
-        visited = [[False for i in range(len(board[0]))] for _ in range(len(board))]
+        visited = [[False for _ in range(len(board[0]))] for _ in range(len(board))]
         print(visited)
         def searchWord(r,c,i):
             if i == len(word):
