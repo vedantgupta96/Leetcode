@@ -1,7 +1,6 @@
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
         maxTotal = 0
-
         def dfs(r,c):
             if 0 > r or r >= len(grid) or 0 > c or c >= len(grid[0]) or grid[r][c] != 1:
                 return 0
@@ -12,4 +11,5 @@ class Solution:
             for c in range(len(grid[0])):
                 if grid[r][c] == 1:
                     maxTotal = max(maxTotal,dfs(r,c))
+        print(grid)
         return maxTotal
