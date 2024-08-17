@@ -3,7 +3,6 @@ class Solution:
         rows = len(board)
         cols = len(board[0])
         visited = [[False for _ in range(len(board[0]))] for _ in range(len(board))]
-        print(visited)
         def searchWord(r,c,i):
             if i == len(word):
                 return True
