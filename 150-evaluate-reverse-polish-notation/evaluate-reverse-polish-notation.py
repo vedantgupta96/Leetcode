@@ -6,20 +6,20 @@ class Solution:
             if c != '+' and c != '*' and c != '-' and c != '/':
                 stack.append(int(c))
             elif c == '+':
-                a = int(stack.pop())
-                b = int(stack.pop())
+                a = stack.pop()
+                b = stack.pop()
                 stack.append(a+b)
             elif c == '-':
-                a = int(stack.pop())
-                b = int(stack.pop())
+                a = stack.pop()
+                b = stack.pop()
                 stack.append(b-a)
             elif c == '*':
-                a = int(stack.pop())
-                b = int(stack.pop())
+                a = stack.pop()
+                b = stack.pop()
                 stack.append(a*b)
             elif c == '/':
-                a = int(stack.pop())
-                b = int(stack.pop())
+                a = stack.pop()
+                b = stack.pop()
                 stack.append(int(b/a))
         return stack.pop()
         
