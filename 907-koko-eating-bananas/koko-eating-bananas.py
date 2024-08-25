@@ -4,13 +4,14 @@ class Solution:
         ans = r
 
         while l <= r:
-            k = (l+r)//2
             hours = 0
+            k = (l+r)//2
             for p in piles:
                 hours += math.ceil(p/k)
-            if hours <= h:
-                ans = min(ans,k)
-                r = k-1
+            if hours>h:
+                l=k+1
             else:
-                l = k+1
+                ans = min(ans,k)
+                r=k-1
         return ans
+                
