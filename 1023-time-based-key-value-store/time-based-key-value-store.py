@@ -2,12 +2,9 @@ class TimeMap:
 
     def __init__(self):
         self.dict = defaultdict(list)
-        
 
     def set(self, key: str, value: str, timestamp: int) -> None:
         self.dict[key].append([value,timestamp])
-
-        
 
     def get(self, key: str, timestamp: int) -> str:
         curr = self.dict[key]
