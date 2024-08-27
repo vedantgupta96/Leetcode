@@ -12,16 +12,17 @@ class Solution:
 
         oldToCopy = {None:None}
         current = head
-
         while current:
             copy = Node(current.val)
             oldToCopy[current] = copy
             current = current.next
+
         current = head
         while current:
             copy = oldToCopy[current]
             copy.next = oldToCopy[current.next]
             copy.random = oldToCopy[current.random]
             current = current.next
+        
         return oldToCopy[head]
         
