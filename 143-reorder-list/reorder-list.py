@@ -10,11 +10,10 @@ class Solution:
         """
         slow,fast = head,head.next
         while fast and fast.next:
-            slow = slow.next
-            fast = fast.next.next
-        second = slow.next
+            slow, fast = slow.next,fast.next.next
+        second = slow.next #second half of the list
         slow.next = None
-        prev = None
+        prev = None #Exactly like reversing a linked list, curr is like second
 
         while second:
             temp = second.next
@@ -22,50 +21,13 @@ class Solution:
             prev = second
             second = temp
         
-        first,second = head,prev
+        first,second = head,prev #after above while loop, prev will be at the head of the second list that is reversed
+        #second will always be shorter or equal to first list, so we run the loop on that
         while second:
-            temp1,temp2=first.next,second.next
-            first.next,second.next= second,temp1
+            temp1,temp2 = first.next,second.next
+            first.next = second
+            second.next = temp1
             first,second = temp1,temp2
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        # slow,fast = head,head.next
-        # while fast and fast.next:
-        #     slow, fast = slow.next,fast.next.next
-        # second = slow.next #second half of the list
-        # slow.next = None
-        # prev = None #Exactly like reversing a linked list, curr is like second
-
-        # while second:
-        #     temp = second.next
-        #     second.next = prev
-        #     prev = second
-        #     second = temp
-        
-        # first,second = head,prev #after above while loop, prev will be at the head of the second list that is reversed
-        # #second will always be shorter or equal to first list, so we run the loop on that
-        # while second:
-        #     temp1,temp2 = first.next,second.next
-        #     first.next = second
-        #     second.next = temp1
-        #     first,second = temp1,temp2
             
 
 
