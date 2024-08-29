@@ -15,7 +15,8 @@ class Solution:
             
             left = dfs(root.left)
             right = dfs(root.right)
-            ans[0] = max(ans[0], left + right)
+            dia = left+right
+            ans[0] = max(ans[0], dia)
             return 1 + max(left,right)
         dfs(root)
         return ans[0]
