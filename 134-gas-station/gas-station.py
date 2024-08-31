@@ -1,7 +1,6 @@
 class Solution:
     def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
         totalGas = currGas = start = 0
-
         for i in range(len(gas)):
             totalGas += gas[i] - cost[i]
             currGas += gas[i] - cost[i]
