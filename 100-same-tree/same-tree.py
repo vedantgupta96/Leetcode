@@ -9,15 +9,18 @@ class Solution:
 
         stackp = [p]
         stackq = [q]
+        
         if not p and not q:
             return True
+        if not p or not q:
+            return False
         
         while stackp and stackq:
 
             nodep = stackp.pop()
             nodeq = stackq.pop()
 
-            if not nodep or not nodeq or nodep.val != nodeq.val:
+            if nodep.val != nodeq.val:
                 return False
             
             if nodep.left and nodeq.left:
@@ -31,5 +34,4 @@ class Solution:
                 stackq.append(nodeq.right)
             elif nodep.right or nodeq.right:
                 return False
-        
         return True
