@@ -7,7 +7,10 @@ class Solution:
         
         heapq.heapify(distance)
         while k:
-            dist,x,y = heapq.heappop(distance)
-            ans.append([x,y])
+            a = heapq.heappop(distance)
+            print(a[1])
+            ans.append([a[1],a[2]])
+            # dist,x,y = heapq.heappop(distance)
+            # ans.append([x,y])
             k-=1
         return ans
