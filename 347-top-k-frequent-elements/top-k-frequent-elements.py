@@ -1,14 +1,20 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        count = defaultdict(int)
-        for i in nums:
-            count[i] += 1
-        
-        count = [(-v,k) for (k,v) in count.items()]
-        heapq.heapify(count)
-        output = []
-        for i in range(k):
-            item = heapq.heappop(count)
-            output.append(item[1])
-        return output
+        countDict = {}
+        ans = []
+        for i in range(len(nums)):
+            if nums[i] not in countDict:
+                countDict[nums[i]] = 1
+            else:
+                countDict[nums[i]] += 1
+        countDict = [(-v,k) for k,v in countDict.items()]
+        heapq.heapify(countDict)
+
+        while k:
+            ans.append(heapq.heappop(countDict)[1])
+            k-=1
+        return ans
+
+
+
 
