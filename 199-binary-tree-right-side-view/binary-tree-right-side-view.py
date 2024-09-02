@@ -7,11 +7,13 @@
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
         ans = []
-        q = collections.deque([root])
+        q = deque([root])
+
         while q:
             rightmost = None
+
             for i in range(len(q)):
-                node = q.popleft()#removes the leftmost element then returns the queue
+                node = q.popleft()
                 if node:
                     rightmost = node
                     q.append(node.left)
@@ -19,4 +21,3 @@ class Solution:
             if rightmost:
                 ans.append(rightmost.val)
         return ans
-        
