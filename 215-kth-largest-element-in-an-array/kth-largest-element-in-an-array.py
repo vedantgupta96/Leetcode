@@ -48,8 +48,8 @@ class Solution:
         nums = [-n for n in nums]
         heapq.heapify(nums)
         ans = -float('Inf')
-        while k>1:
+        while k:
             
-            heapq.heappop(nums)
+            ans = heapq.heappop(nums)
             k -= 1
-        return -nums[0]
+        return -ans
