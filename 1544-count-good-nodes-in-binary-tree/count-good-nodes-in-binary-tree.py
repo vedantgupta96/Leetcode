@@ -12,11 +12,10 @@ class Solution:
 
         while stack:
             node,maxVal = stack.pop()
-            if node.val >= maxVal:
-                ans+=1
-            if node.left:
+            if node:
+                if node.val >= maxVal:
+                    ans+=1
                 stack.append((node.left,max(node.val,maxVal)))
-            if node.right:
                 stack.append((node.right,max(node.val,maxVal)))
         return ans
 
