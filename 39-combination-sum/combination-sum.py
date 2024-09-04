@@ -8,13 +8,13 @@ class Solution:
 
             if total == target:
                 ans.append(cand)
-                continue
             elif total > target or index == len(candidates):
                 continue
             else:
                 stack.append((index,total+candidates[index],cand+[candidates[index]]))
                 stack.append((index+1,total,cand))
         return ans
+
 
         # ans = []
         # cur = []
