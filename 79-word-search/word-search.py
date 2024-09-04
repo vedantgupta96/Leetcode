@@ -16,7 +16,7 @@ class Solution:
 
         for r in range(rows):
             for c in range(cols):
-                if board[r][c] == word[0] and searchWord(r,c,0):
+                if searchWord(r,c,0):
                     return True
         return False
         
