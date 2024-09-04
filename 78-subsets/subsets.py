@@ -1,21 +1,18 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-
         ans = []
-        subset = []
+        stack = [(0, [])]  # Stack to hold (index, current subset)
 
-        def dfs(n):
-            if n == len(nums):
-                ans.append(subset.copy())
-                return
-            
-            subset.append(nums[n])
-            dfs(n+1)
-            subset.pop()
-            dfs(n+1)
-            return
-            
-            
-        dfs(0)
+        while stack:
+            index, subset = stack.pop()
+
+            # If we've processed all elements, add the subset to the result
+            if index == len(nums):
+                ans.append(subset)
+            else:
+                # Decision to include nums[index] in the subset
+                stack.append((index + 1, subset + [nums[index]]))
+                # Decision to exclude nums[index] from the subset
+                stack.append((index + 1, subset))
+
         return ans
-        
