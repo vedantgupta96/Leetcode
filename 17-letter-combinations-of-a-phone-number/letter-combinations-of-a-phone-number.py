@@ -4,11 +4,10 @@ class Solution:
                          '8':'tuv', '9':'wxyz'}
         if digits == '':
             return []
-        stack = []
+        stack = [""]
         answer = []
         num_length = len(digits)
         
-        stack.append("")
         
         while stack:
             current = stack.pop()
