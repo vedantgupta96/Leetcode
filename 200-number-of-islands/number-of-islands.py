@@ -1,5 +1,5 @@
 class Solution:
-    def numIslands(self, grid: List[List[str]]) -> int:
+    def numIslands(self, grid) -> int:
         total = 0
 
         def dfs(r,c):
