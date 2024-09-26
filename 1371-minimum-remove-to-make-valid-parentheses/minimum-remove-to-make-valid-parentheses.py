@@ -12,7 +12,8 @@ class Solution:
                 indexSet.add(i)
             else:
                 stack.pop()
-        indexSet = indexSet.union(set(stack))
+        for i in stack:
+            indexSet.add(i)
         ans = []
         for i in range(len(s)):
             if i not in indexSet:
