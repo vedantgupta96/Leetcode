@@ -1,7 +1,7 @@
 class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
         N = len(set(chain(*edges)))
-        root = [i for i in range(N+1)]
+        root = [i for i in range(len(edges)+1)]
 
         def rec(x):
             if root[x] == x:
